@@ -1,5 +1,6 @@
 (function($) {
-	var $content, posttmpl,
+	var $content, posttmpl, 
+		fetching_posts = false,
 		posttmplsource = [
 			'<article class="post">',
 				'<header>',
@@ -40,12 +41,32 @@
 		var current_index = current_index || 0,
 			url = "tiddlers?select=tag:post;sort=-modified;limit=" + current_index + ",10;render=1";
 
-		$.getJSON( url, function(resp) {
-			if(resp.length) {
-				renderPosts( resp );
-				$(".loadmore").data("current-index", current_index + resp.length);
-			}
-		});
+		if( !fetching_posts ) {
+			fetching_posts = true;
+			$.getJSON( url, function(resp) {
+				if(resp.length) {
+					callback( resp );
+					$(".loadmore").data("current-index", current_index + resp.length);
+				}
+			}).always(function() {
+				fetching_posts = false;
+			});
+		}
+	}
+
+	function fetchMorePosts(callback) {
+		var current_index = $(".loadmore").data("current-index");
+		getPosts( current_index, callback );
+	}
+
+	function triggerLazyLoad() {
+		var trigger_point = 500,
+			doc_height = $( document ).height(),
+			scroll_pos = $( document ).scrollTop();
+
+		if(doc_height - scroll_pos < trigger_point) {
+			fetchMorePosts( renderPosts );
+		}
 	}
 
 	$(function() {
@@ -57,10 +78,13 @@
 
 		// add handler to load more post on click
 		$(".loadmore").on("click", function(e) {
-			var $this = $(e.target),
-				current_index = $this.data("current-index");
-			getPosts( current_index, renderPosts );
+			var $this = $(e.target);
+			fetchMorePosts( renderPosts );
 			return false;
+		});
+
+		$( document ).on("scroll", function(e) {
+			triggerLazyLoad();
 		});
 	});
 
