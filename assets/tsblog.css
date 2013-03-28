@@ -165,3 +165,11 @@ h1, h2, h3, h4, h5, h6, .date {
 #content .post-content div ul {
 	margin: 0;
 }
+
+#content .post-content {
+	word-wrap: break-word;
+}
+
+#content .post-content div img {
+	max-width: 100%;
+}
