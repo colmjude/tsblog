@@ -73,6 +73,23 @@
 		$content = $("#content");
 		posttmpl = Handlebars.compile(posttmplsource);
 
+		var $btt = $("#backtotop").hide();
+
+		// display bbt btn when user has scrolled x
+		$( window ).scroll(function() {
+			if( $(this).scrollTop() > ($("#details").height() - 200) ) {
+				$btt.fadeIn();
+			} else {
+				$btt.fadeOut();
+			}
+		});
+
+		// attach handler to scroll page back to top
+		$btt.on("click", function(e) {
+			$('body,html').animate({scrollTop: 0 }, 800);
+			return false;
+		});
+
 		// get the initial set of posts
 		getPosts( 0, renderPosts );
 

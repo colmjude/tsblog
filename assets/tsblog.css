@@ -7,6 +7,7 @@ body {
 	margin: 0 auto;
 	width: 1140px;
 	font-family: Georgia;
+	position: relative;
 }
 
 h1, h2, h3, h4, h5, h6, .date {
@@ -140,6 +141,20 @@ h1, h2, h3, h4, h5, h6, .date {
 
 #content article .tags p a {
 	font-weight: normal;
+}
+
+/* back to the top button */
+#backtotop {
+	position: fixed;
+	bottom: 30px;
+	background: rgba(240,244,248, 0.2);
+	width: 100px; height: 100px;
+	line-height: 100px;
+	text-align: center;
+	color: #F0F4F8;
+	font-size: 36px;
+	border-radius: 8px;
+	margin-left: 310px;
 }
 
 /* Rules to make tw output look respectable */
