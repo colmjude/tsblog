@@ -66,7 +66,8 @@
 	}
 
 	function triggerLazyLoad() {
-		var trigger_point = 500,
+		// is there a better way to do this
+		var trigger_point = $( window ).height() + 200,
 			doc_height = $( document ).height(),
 			scroll_pos = $( document ).scrollTop();
 
