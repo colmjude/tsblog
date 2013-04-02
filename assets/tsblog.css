@@ -147,14 +147,30 @@ h1, h2, h3, h4, h5, h6, .date {
 #backtotop {
 	position: fixed;
 	bottom: 30px;
-	background: rgba(240,244,248, 0.2);
+	background: url(bluearrow.png) no-repeat 50% 50% rgba(240,244,248, 0.2);
 	width: 100px; height: 100px;
 	line-height: 100px;
 	text-align: center;
-	color: #F0F4F8;
+	color: rgba(240,244,248, 0.2);
 	font-size: 36px;
 	border-radius: 8px;
 	margin-left: 310px;
+}
+
+#backtotop:after {
+	content: "Back to top";
+	font-size: 12px;
+	position: relative;
+	bottom: -55px;
+	width: 100px;
+	height: 21px;
+	text-transform: uppercase;
+}
+
+#backtotop:hover {
+	cursor: pointer;
+	background-color: rgba(240,244,248, 0.4);
+	color: rgba(240,244,248, 0.4);
 }
 
 /* Rules to make tw output look respectable */
