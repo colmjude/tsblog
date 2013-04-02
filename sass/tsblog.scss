@@ -1,0 +1,204 @@
+// Colour Definitions
+$deep_blue: #0082AF;
+$lightest_blue: #F0F4F8;
+$light_opaque_blue: rgba(240,244,248, 0.2);
+$opaque_blue: rgba(240,244,248, 0.4);
+
+html {
+	background: $deep_blue;
+	font: normal 112.5%/1.65 serif;
+}
+
+body {
+	margin: 0 auto;
+	width: 1140px;
+	font-family: Georgia;
+	position: relative;
+}
+
+h1, h2, h3, h4, h5, h6, .date {
+	font-family: Helvetica;
+	text-rendering: optimizeLegibility;
+	line-height: 1;
+	margin: 0;
+}
+
+#details {
+	width: 345px;
+	position: absolute;
+	color: $lightest_blue;
+	text-align: center;
+	padding: 45px 65px;
+	font-family: helvetica;
+
+	a {
+		color: $lightest_blue;
+		text-decoration: none;
+	}
+
+	h1 {
+		font-size: 72px;
+		text-transform: uppercase;
+		padding-bottom: 45px;
+		border-bottom: 1px solid $lightest_blue;
+	}
+
+	div {
+		border-bottom: 1px solid $lightest_blue;
+		padding: 2em 0;
+
+		p {
+			margin: 0;
+		}
+	}
+
+	div.links {
+		padding: 25.5px 0;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		a {
+			display: block;
+			padding: 0.5em;
+			border-radius: 4px;
+			text-transform: uppercase;
+			font-size: 21px;
+			font-weight: bold;
+
+			&:hover {
+				background: $lightest_blue;
+				color: $deep_blue;
+			}
+		}
+	}
+}
+
+#content {
+	width: 665px;
+	margin-left: 475px;
+
+	a {
+		color: $deep_blue;
+	}
+
+	article,
+	> section {
+		background: $lightest_blue;
+		border-radius: 8px;
+	}
+
+	article {
+		padding: 45px 65px;
+		margin-top: 30px;
+
+		.post-content {
+			margin: 1em 0;
+		}
+
+		.tags p {
+			margin: 0;
+			font-weight: bold;
+
+			a {
+				font-weight: normal;
+			}
+		}
+	}
+
+	> section {
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+		padding: 45px 0;
+
+		h2 {
+			color: $deep_blue;
+			text-align: center;
+		}
+	}
+	
+	.date {
+		font-size: 16px; /* change to ems */
+		color: $deep_blue;
+	}
+
+	header {
+		text-align: center;
+	}
+
+	h2 {
+		font-size: 36px;
+		text-transform: uppercase;
+	}
+
+	.loadmore {
+		display: block;
+		background: $lightest_blue;
+		border-radius: 8px;
+		font-size: 21px;
+		padding: 1em;
+		text-align: center;
+		text-decoration: none;
+		margin-top: 30px;
+	}
+}
+
+/* back to the top button */
+#backtotop {
+	position: fixed;
+	bottom: 30px;
+	background: url(bluearrow.png) no-repeat 50% 50% $light_opaque_blue;
+	width: 100px; height: 100px;
+	line-height: 100px;
+	text-align: center;
+	color: $light_opaque_blue;
+	font-size: 36px;
+	border-radius: 8px;
+	margin-left: 310px;
+
+	&:after {
+		content: "Back to top";
+		font-size: 12px;
+		position: relative;
+		bottom: -55px;
+		width: 100px;
+		height: 21px;
+		text-transform: uppercase;
+	}
+
+	&:hover {
+		cursor: pointer;
+		background-color: $opaque_blue;
+		color: $opaque_blue;
+	}
+}
+
+/* Rules to make tw output look respectable */
+#content .post-content {
+	word-wrap: break-word;
+
+	div {
+		img {
+			max-width: 100%;
+		}
+		h1, h2 {
+			margin: 1em 0 0.6em;
+		}
+		h1 {
+			font-size: 24px;
+		}
+		h2 {
+			font-size: 21px;
+			text-transform: none;
+		}
+		br {
+			display: none;
+		}
+		ul {
+			margin: 0;
+		}
+	}
+}
