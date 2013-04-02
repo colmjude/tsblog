@@ -39,7 +39,8 @@
 
 	function getPosts( current_index, callback ) {
 		var current_index = current_index || 0,
-			url = "tiddlers?select=tag:post;sort=-modified;limit=" + current_index + ",10;render=1";
+			limit = 10,
+			url = "tiddlers?select=tag:post;sort=-modified;limit=" + current_index + "," + limit + ";render=1";
 
 		if( !fetching_posts ) {
 			fetching_posts = true;
@@ -47,6 +48,11 @@
 				if(resp.length) {
 					callback( resp );
 					$(".loadmore").data("current-index", current_index + resp.length);
+				}
+				// if not enough (limit) posts are returned then have no more
+				// so trigger event
+				if(resp.length !== limit) {
+					$.event.trigger('allpostsreturned');
 				}
 			}).always(function() {
 				fetching_posts = false;
@@ -100,8 +106,16 @@
 			return false;
 		});
 
-		$( document ).on("scroll", function(e) {
+		$( document ).on("scroll.lazyloadscroll", function(e) {
 			triggerLazyLoad();
+		});
+
+		// remove lazyload handler if all posts have already
+		// been returned
+		$( document ).on('allpostsreturned', function(e) {
+			var $this = $(e.target);
+			$this.off("scroll.lazyloadscroll");
+			$(".loadmore").text("no more posts");
 		});
 	});
 
