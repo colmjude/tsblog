@@ -1,0 +1,10 @@
+//@mixin transition($prop, $dur, $type) {
+@mixin transition($spec...) {
+//	-webkit-transition: $spec;
+//	-moz-transition: $spec;
+//	-o-transition: $spec;
+//	transition: $spec;
+	@each $prefix in -webkit-, -moz-, -o-, '' {
+		#{$prefix}transition: $spec;
+	}
+}
