@@ -41,7 +41,7 @@
 	function getPosts( current_index, callback ) {
 		var current_index = current_index || 0,
 			limit = 10,
-			url = "tiddlers?select=tag:post;sort=-modified;limit=" + current_index + "," + limit + ";render=1";
+			url = "tiddlers?select=tag:post;sort=-created;limit=" + current_index + "," + limit + ";render=1";
 
 		if( !fetching_posts ) {
 			fetching_posts = true;
