@@ -1,6 +1,8 @@
 @import 'utils';
 
 // Colour Definitions
+$near_black: #010D11;
+$off_black: #03171E;
 $deep_blue: #0082AF;
 $lightest_blue: #F0F4F8;
 $light_opaque_blue: rgba(240,244,248, 0.2);
@@ -16,6 +18,7 @@ body {
 	width: 1140px;
 	font-family: Georgia;
 	position: relative;
+	color: $off_black;
 }
 
 h1, h2, h3, h4, h5, h6, .date {
@@ -129,6 +132,11 @@ h1, h2, h3, h4, h5, h6, .date {
 
 	header {
 		text-align: center;
+
+		h2 a {
+			color: $off_black;
+			text-decoration: none;
+		}
 	}
 
 	h2 {

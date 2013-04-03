@@ -4,7 +4,7 @@
 		posttmplsource = [
 			'<article class="post">',
 				'<header>',
-					'<h2>{{title}}</h2>',
+					'<h2><a href="/{{encoded_title}}">{{title}}</a></h2>',
 					'<span class="date">{{date}}</span>',
 				'</header>',
 				'<div class="post-content"></div>',
@@ -24,6 +24,7 @@
 			var date = _ts.toDate(item.modified);
 			var postdata = {
 				title: item.title,
+				encoded_title: encodeURI( item.title ),
 				date: moment(date).format('LLLL'),
 				tags: item.tags
 			};
