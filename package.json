@@ -1,0 +1,19 @@
+{
+	"author": "Colm Britton (http://colmjude.com)",
+	"name": "tsblog",
+	"description": "A blog SPA for tiddlyspace",
+	"version": "0.1.1",
+	"main": "Gruntfile.js",
+	"homepage": "http://blog.tiddlyspace.com",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/colmjude/tsblog.git"
+	},
+	"devDependencies": {
+		"grunt": "~0.4.0",
+		"grunt-exec": "~0.4.0",
+		"grunt-contrib-copy": "~0.4.0",
+		"grunt-contrib-jshint": "~0.3.0",
+		"grunt-contrib-compass": "~0.1.3"
+	}
+}
