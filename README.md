@@ -26,6 +26,17 @@ To update locally and run use:
 
 	grunt update-dev
 	
+###Deploy
+To deploy you need to first authenticate. Do this by running:
+
+	tsapp auth <username>
+	
+Then you can run:
+
+	grunt ts-deploy
+	
+to deploy latest code.
+
 ###Who
 
 Colm Britton aka [colmjude](http://colmjude.com)
