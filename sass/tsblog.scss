@@ -6,7 +6,9 @@ $off_black: #03171E;
 $deep_blue: #0082AF;
 $lightest_blue: #F0F4F8;
 $light_opaque_blue: rgba(240,244,248, 0.2);
+$light_opaque_blue_fb: rgb(50,159,198);
 $opaque_blue: rgba(240,244,248, 0.4);
+$opaque_blue_fb: rgb(114,209,243);
 
 html {
 	background: $deep_blue;
@@ -168,10 +170,12 @@ h1, h2, h3, h4, h5, h6, .date {
 #backtotop {
 	position: fixed;
 	bottom: 30px;
+	background: url(bluearrow.png) no-repeat 50% 50% $light_opaque_blue_fb;
 	background: url(bluearrow.png) no-repeat 50% 50% $light_opaque_blue;
 	width: 100px; height: 100px;
 	line-height: 100px;
 	text-align: center;
+	color: $light_opaque_blue_fb;
 	color: $light_opaque_blue;
 	font-size: 36px;
 	border-radius: 8px;
@@ -190,7 +194,9 @@ h1, h2, h3, h4, h5, h6, .date {
 
 	&:hover {
 		cursor: pointer;
+		background-color: $opaque_blue_fb;
 		background-color: $opaque_blue;
+		color: $opaque_blue_fb;
 		color: $opaque_blue;
 	}
 }
