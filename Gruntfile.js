@@ -24,6 +24,11 @@ module.exports = function(grunt) {
 				filter: "isFile"
 			}
 		},
+		curl: {
+			'assets/_ts.js': 'https://raw.github.com/colmjude/_ts.js/master/_ts.js',
+			'assets/handlebars.js': 'https://raw.github.com/wycats/handlebars.js/master/dist/handlebars.js',
+			'assets/moment.min.js': 'https://raw.github.com/timrwood/moment/develop/min/moment.min.js'
+		},
 		exec: {
 			tsserve: {
 				command: "tsapp serve",
@@ -51,11 +56,12 @@ module.exports = function(grunt) {
 		grunt.task.run("exec:tsserve");
 	});
 
-	grunt.registerTask("default", ["jshint", "copy"]);
+	grunt.registerTask("default", ["jshint", "copy", "curl"]);
 	grunt.registerTask("update-dev", ["compass", "ts-serve"]);
 
 	grunt.loadNpmTasks("grunt-exec");
 	grunt.loadNpmTasks("grunt-contrib-copy");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-contrib-compass");
+	grunt.loadNpmTasks("grunt-curl");
 };

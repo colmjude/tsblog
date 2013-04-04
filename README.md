@@ -14,6 +14,10 @@ Firstly, from the home directory run:
 
 	npm install
 	
+Then to setup run (default grunt task):
+
+	grunt
+	
 To run app locally run:
 
 	grunt ts-serve
