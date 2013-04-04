@@ -39,16 +39,16 @@
 	}
 
 	function getPosts( current_index, callback ) {
-		var current_index = current_index || 0,
+		var ci = current_index || 0,
 			limit = 10,
-			url = "tiddlers?select=tag:post;sort=-created;limit=" + current_index + "," + limit + ";render=1";
+			url = "tiddlers?select=tag:post;sort=-created;limit=" + ci + "," + limit + ";render=1";
 
 		if( !fetching_posts ) {
 			fetching_posts = true;
 			$.getJSON( url, function(resp) {
 				if(resp.length) {
 					callback( resp );
-					$(".loadmore").data("current-index", current_index + resp.length);
+					$(".loadmore").data("current-index", ci + resp.length);
 				}
 				// if not enough (limit) posts are returned then have no more
 				// so trigger event
