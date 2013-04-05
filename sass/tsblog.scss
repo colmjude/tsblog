@@ -10,21 +10,25 @@ $light_opaque_blue_fb: rgb(50,159,198);
 $opaque_blue: rgba(240,244,248, 0.4);
 $opaque_blue_fb: rgb(114,209,243);
 
+// Font stacks
+$serif-stack: Georgia, Times, "Times New Roman", serif;
+$sans-serif-stack: Helvetica, Arial, sans-serif;
+
 html {
 	background: $deep_blue;
-	font: normal 112.5%/1.65 serif;
+	font: normal 112.5%/1.65 $serif-stack;
 }
 
 body {
 	margin: 0 auto;
 	width: 1140px;
-	font-family: Georgia;
+	font-family: $serif-stack;
 	position: relative;
 	color: $off_black;
 }
 
 h1, h2, h3, h4, h5, h6, .date {
-	font-family: Helvetica;
+	font-family: $sans-serif-stack;
 	text-rendering: optimizeLegibility;
 	line-height: 1;
 	margin: 0;
@@ -36,7 +40,7 @@ h1, h2, h3, h4, h5, h6, .date {
 	color: $lightest_blue;
 	text-align: center;
 	padding: 45px 65px;
-	font-family: helvetica;
+	font-family: $sans-serif-stack;
 
 	a {
 		color: $lightest_blue;
