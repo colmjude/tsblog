@@ -1,12 +1,14 @@
 /*global module:false */
 module.exports = function(grunt) {
 
-	// var fontFiles = [
-	//     "IcoMoon.eot",
-	//     "IcoMoon.svg",
-	//     "IcoMoon.ttf",
-	//     "IcoMoon.woff"
-	// ];
+	var fontFiles = [
+		"FontAwesome.otf",
+		"fontawesome-webfont.eot",
+		"fontawesome-webfont.svg",
+		"fontawesome-webfont.ttf",
+		"fontawesome-webfont.woff"
+	];
+
 	grunt.initConfig({
 		compass: {
 			dist: {
@@ -28,6 +30,11 @@ module.exports = function(grunt) {
 			'assets/_ts.js': 'https://raw.github.com/colmjude/_ts.js/master/_ts.js',
 			'assets/handlebars.js': 'https://raw.github.com/wycats/handlebars.js/master/dist/handlebars.js',
 			'assets/moment.min.js': 'https://raw.github.com/timrwood/moment/develop/min/moment.min.js'
+		},
+		"curl-dir": {
+			"font": [
+				"https://raw.github.com/FortAwesome/Font-Awesome/master/font/{" + fontFiles + "}"
+			]
 		},
 		exec: {
 			tsserve: {
@@ -56,7 +63,7 @@ module.exports = function(grunt) {
 		grunt.task.run("exec:tsserve");
 	});
 
-	grunt.registerTask("default", ["jshint", "copy", "curl"]);
+	grunt.registerTask("default", ["jshint", "curl", "curl-dir", "copy"]);
 	grunt.registerTask("update-dev", ["compass", "ts-serve"]);
 
 	grunt.loadNpmTasks("grunt-exec");
