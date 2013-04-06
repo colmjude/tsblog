@@ -10,6 +10,10 @@ module.exports = function(grunt) {
 	];
 
 	grunt.initConfig({
+		clean: {
+			build: ["assets/"],
+			repo: ['js/lib', "font"]
+		},
 		compass: {
 			dist: {
 				options: {
@@ -24,12 +28,24 @@ module.exports = function(grunt) {
 				src: ["font/*.*"],
 				dest: "assets/",
 				filter: "isFile"
+			},
+			js: {
+				expand: true, flatten: true,
+				src: ["js/**"],
+				dest: "assets/",
+				filter: "isFile"
+			},
+			imgs: {
+				expand: true, flatten: true,
+				src: ["imgs/**"],
+				dest: "assets/",
+				filter: "isFile"
 			}
 		},
 		curl: {
-			'assets/_ts.js': 'https://raw.github.com/colmjude/_ts.js/master/_ts.js',
-			'assets/handlebars.js': 'https://raw.github.com/wycats/handlebars.js/master/dist/handlebars.js',
-			'assets/moment.min.js': 'https://raw.github.com/timrwood/moment/develop/min/moment.min.js'
+			'js/lib/_ts.js': 'https://raw.github.com/colmjude/_ts.js/master/_ts.js',
+			'js/lib/handlebars.js': 'https://raw.github.com/wycats/handlebars.js/master/dist/handlebars.js',
+			'js/lib/moment.min.js': 'https://raw.github.com/timrwood/moment/develop/min/moment.min.js'
 		},
 		"curl-dir": {
 			"font": [
@@ -63,12 +79,15 @@ module.exports = function(grunt) {
 		grunt.task.run("exec:tsserve");
 	});
 
-	grunt.registerTask("default", ["jshint", "curl", "curl-dir", "copy"]);
-	grunt.registerTask("update-dev", ["compass", "ts-serve"]);
+	grunt.registerTask("default", ["jshint", "curl", "curl-dir", "copy", "compass"]);
+	grunt.registerTask("tsapp-clean", ["clean:build"]);
+	grunt.registerTask("update-dev", ["compass", "copy", "ts-serve"]);
+	grunt.registerTask("deploy", ["compass", "copy", "ts-deploy"]);
 
 	grunt.loadNpmTasks("grunt-exec");
 	grunt.loadNpmTasks("grunt-contrib-copy");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-contrib-compass");
 	grunt.loadNpmTasks("grunt-curl");
+	grunt.loadNpmTasks("grunt-contrib-clean");
 };
