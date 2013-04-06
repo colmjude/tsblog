@@ -64,7 +64,7 @@ module.exports = function(grunt) {
 		},
 		jshint: {
 			files: {
-				src: ["Gruntfile.js", "assets/tsblog.js"]
+				src: ["Gruntfile.js", "js/*.js"]
 			}
 		}
 	});

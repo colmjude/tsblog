@@ -1,4 +1,6 @@
 (function($) {
+	"use strict";
+
 	var $content, posttmpl, 
 		fetching_posts = false,
 		posttmplsource = [
