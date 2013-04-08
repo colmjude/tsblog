@@ -20,5 +20,17 @@ tags:
 #container h1 {
 	font-size: 36px;
 	text-transform: uppercase;
+}
+
+#header {
 	text-align: center;
+}
+
+#header .date {
+	font-size: 16px;
+	color: #0082af;
+}
+
+p.tags {
+	font-weight: bold;
 }
