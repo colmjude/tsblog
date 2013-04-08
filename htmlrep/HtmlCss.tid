@@ -2,6 +2,7 @@ title: HtmlCss
 type: text/css
 tags: 
 
+@import url(font-awesome.css);
 @import url(/tsblog.css);
 
 #container {
