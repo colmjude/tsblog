@@ -47,6 +47,8 @@
 		});
 
 		$(".meta", $context).remove();
+
+		$("#editLink").text("").html('<i class="icon-edit"></i>');
 	});
 
 }(jQuery));
