@@ -1,4 +1,6 @@
 (function($) {
+	"use strict";
+
 	var detailsHTML = ['<h1>Tiddly Space</h1>',
 		'<div>',
 			'<p>latest development news, useful links and general happenings from Tiddlyspace</p>',
