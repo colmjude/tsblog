@@ -105,7 +105,7 @@ h1, h2, h3, h4, h5, h6, .date {
 	}
 
 	article,
-	> section {
+	section {
 		background: $lightest_blue;
 		border-radius: 8px;
 	}
@@ -128,7 +128,7 @@ h1, h2, h3, h4, h5, h6, .date {
 		}
 	}
 
-	> section {
+	section {
 		border-top-left-radius: 0;
 		border-top-right-radius: 0;
 		padding: 45px 0;

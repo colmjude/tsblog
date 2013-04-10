@@ -45,7 +45,8 @@ module.exports = function(grunt) {
 		curl: {
 			'js/lib/_ts.js': 'https://raw.github.com/colmjude/_ts.js/master/_ts.js',
 			'js/lib/handlebars.js': 'https://raw.github.com/wycats/handlebars.js/master/dist/handlebars.js',
-			'js/lib/moment.min.js': 'https://raw.github.com/timrwood/moment/develop/min/moment.min.js'
+			'js/lib/moment.min.js': 'https://raw.github.com/timrwood/moment/develop/min/moment.min.js',
+			'js/lib/html5shiv.js': 'https://raw.github.com/aFarkas/html5shiv/master/dist/html5shiv.js'
 		},
 		"curl-dir": {
 			"font": [
