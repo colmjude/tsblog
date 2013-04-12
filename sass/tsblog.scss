@@ -25,6 +25,10 @@ body {
 	font-family: $serif-stack;
 	position: relative;
 	color: $off_black;
+
+	@media only screen and (max-width: 960px) {
+		max-width: 100%;
+	}
 }
 
 h1, h2, h3, h4, h5, h6, .date {
@@ -41,6 +45,15 @@ h1, h2, h3, h4, h5, h6, .date {
 	text-align: center;
 	padding: 45px 65px;
 	font-family: $sans-serif-stack;
+
+	@media only screen and (max-width: 960px) {
+		display: inherit;
+		position: fixed;
+		left: -475px;
+		top: 0;
+		background: $deep_blue;
+		@include transition(left 0.6s ease);
+	}
 
 	a {
 		color: $lightest_blue;
@@ -99,6 +112,10 @@ h1, h2, h3, h4, h5, h6, .date {
 #content {
 	width: 665px;
 	margin-left: 475px;
+
+	@media only screen and (max-width: 960px) {
+		margin: 0 auto;
+	}
 
 	a {
 		color: $deep_blue;
@@ -186,6 +203,10 @@ h1, h2, h3, h4, h5, h6, .date {
 	margin-left: 310px;
 	@include transition(all .4s ease-in);
 
+	@media only screen and (max-width: 960px) {
+		visibility: hidden;
+	}
+
 	&:after {
 		content: "Back to top";
 		font-size: 12px;
@@ -229,5 +250,40 @@ h1, h2, h3, h4, h5, h6, .date {
 		ul {
 			margin: 0;
 		}
+	}
+}
+
+/* Checkbox hack */
+input[type=checkbox] {
+	position: absolute;
+	top: -9999px;
+	left: -9999px;
+	opacity: 0;
+
+	@media only screen and (max-width: 960px) {
+		&:checked ~ #details {
+			left: 0;
+			box-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+		}
+		&:checked ~ .links,
+		&:checked ~ .sociallinks {
+			display: block;
+		}
+	}
+}
+
+label {
+	display: none;
+	z-index: 1000;
+	background: $deep_blue;
+	color: $lightest_blue;
+	padding: 0.5em 0.75em;
+	border-bottom-right-radius: 4px;
+
+	@media only screen and (max-width: 960px) {
+		display: inherit;
+		position: fixed;
+		top: 0;
+		left: 0;
 	}
 }
