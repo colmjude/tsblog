@@ -1,0 +1,44 @@
+#details {
+    h1 {
+        font-size: 4rem;
+    }
+    ul {
+        a {
+            font-size: 1.167rem;
+        }
+    }
+}
+
+#content {
+    .date {
+        font-size: 0.889rem;
+    }
+    h2 {
+        font-size: 1.778rem;
+    }
+    .loadmore {
+        font-size: 1.167rem;
+    }
+}
+
+#backtotop {
+    font-size: 1.778rem;
+
+    &:after {
+        font-size: 0.667rem;
+    }
+}
+
+#content .post-content {
+    div {
+        h1 {
+			font-size: 1.333rem;
+		}
+		h2 {
+		    font-size: 1.167rem;
+		}
+    }
+    h2 {
+		font-size: 1.5rem;
+	}
+}

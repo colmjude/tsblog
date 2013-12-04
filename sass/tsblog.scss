@@ -16,8 +16,14 @@ $sans-serif-stack: Helvetica, Arial, sans-serif;
 
 html {
 	background: $deep_blue;
-	font: normal 112.5%/1.65 $serif-stack;
+	font: normal 100%/1.65 $serif-stack;
+
+    @media only screen and (min-width: 480px) {
+        font-size: 112.5%;
+    }
 }
+
+@import 'typography';
 
 body {
 	margin: 0 auto;
@@ -39,12 +45,17 @@ h1, h2, h3, h4, h5, h6, .date {
 }
 
 #details {
-	width: 345px;
+	width: 320px;
 	position: absolute;
 	color: $lightest_blue;
 	text-align: center;
-	padding: 45px 65px;
+    padding: 35px 0;
 	font-family: $sans-serif-stack;
+
+    @media only screen and (min-width: 480px) {
+        width: 345px;
+        padding: 45px 65px;
+    }
 
 	@media only screen and (max-width: 960px) {
 		display: inherit;
@@ -61,15 +72,22 @@ h1, h2, h3, h4, h5, h6, .date {
 	}
 
 	h1 {
-		font-size: 72px;
 		text-transform: uppercase;
-		padding-bottom: 45px;
+		padding-bottom: 1rem;
 		border-bottom: 1px solid $lightest_blue;
+
+        @media only screen and (min-width: 480px) {
+            padding-bottom: 45px;
+        }
 	}
 
 	div {
 		border-bottom: 1px solid $lightest_blue;
-		padding: 2em 0;
+		padding: 1em 0;
+
+        @media only screen and (min-width: 480px) {
+            padding: 2em 0;
+        }
 
 		p {
 			margin: 0;
@@ -77,7 +95,11 @@ h1, h2, h3, h4, h5, h6, .date {
 	}
 
 	div.links {
-		padding: 25.5px 0;
+		padding: 1em 0;
+
+        @media only screen and (min-width: 480px) {
+            padding: 25.5px 0;
+        }
 	}
 
 	ul {
@@ -87,11 +109,14 @@ h1, h2, h3, h4, h5, h6, .date {
 
 		a {
 			display: block;
-			padding: 0.5em;
+			padding: 0;
 			border-radius: 4px;
 			text-transform: uppercase;
-			font-size: 21px;
 			font-weight: bold;
+
+            @media only screen and (min-width: 480px) {
+                padding: 0.5em;
+            }
 
 			&:hover {
 				background: $lightest_blue;
@@ -110,8 +135,12 @@ h1, h2, h3, h4, h5, h6, .date {
 }
 
 #content {
-	width: 665px;
-	margin-left: 475px;
+    width: 100%;
+
+    @media only screen and (min-width: 480px) {
+        width: 665px;
+    	margin-left: 475px;
+    }
 
 	@media only screen and (max-width: 960px) {
 		margin: 0 auto;
@@ -124,12 +153,21 @@ h1, h2, h3, h4, h5, h6, .date {
 	article,
 	section {
 		background: $lightest_blue;
-		border-radius: 8px;
+
+        @media only screen and (min-width: 480px) {
+            border-radius: 8px;
+        }
 	}
 
 	article {
-		padding: 45px 65px;
-		margin-top: 30px;
+		padding: 2em 1em 1em;
+		border-top: 1px solid $deep_blue;
+
+        @media only screen and (min-width: 480px) {
+            padding: 45px 65px;
+            margin-top: 30px;
+            border: none;
+        }
 
 		.post-content {
 			margin: 1em 0;
@@ -157,7 +195,6 @@ h1, h2, h3, h4, h5, h6, .date {
 	}
 	
 	.date {
-		font-size: 16px; /* change to ems */
 		color: $deep_blue;
 	}
 
@@ -171,7 +208,6 @@ h1, h2, h3, h4, h5, h6, .date {
 	}
 
 	h2 {
-		font-size: 36px;
 		text-transform: uppercase;
 	}
 
@@ -179,7 +215,6 @@ h1, h2, h3, h4, h5, h6, .date {
 		display: block;
 		background: $lightest_blue;
 		border-radius: 8px;
-		font-size: 21px;
 		padding: 1em;
 		text-align: center;
 		text-decoration: none;
@@ -198,7 +233,6 @@ h1, h2, h3, h4, h5, h6, .date {
 	text-align: center;
 	color: $light_opaque_blue_fb;
 	color: $light_opaque_blue;
-	font-size: 36px;
 	border-radius: 8px;
 	margin-left: 310px;
 	@include transition(all .4s ease-in);
@@ -209,7 +243,6 @@ h1, h2, h3, h4, h5, h6, .date {
 
 	&:after {
 		content: "Back to top";
-		font-size: 12px;
 		position: relative;
 		bottom: -55px;
 		width: 100px;
@@ -237,11 +270,7 @@ h1, h2, h3, h4, h5, h6, .date {
 		h1, h2 {
 			margin: 1em 0 0.6em;
 		}
-		h1 {
-			font-size: 24px;
-		}
 		h2 {
-			font-size: 21px;
 			text-transform: none;
 		}
 		br {
@@ -250,10 +279,6 @@ h1, h2, h3, h4, h5, h6, .date {
 		ul {
 			margin: 0;
 		}
-	}
-
-	h2 {
-		font-size: 27px;
 	}
 }
 
