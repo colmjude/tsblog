@@ -79,11 +79,22 @@
 		}
 	}
 
+    function calcHeightOfPanel() {
+        var height = $(window).height() - 235 - 16;
+        return height;
+    }
+
 	$(function() {
 		$content = $("#content");
+		var $detailsContent = $(".details-content").height( calcHeightOfPanel() );
 		posttmpl = Handlebars.compile(posttmplsource);
 
 		var $btt = $("#backtotop").hide();
+
+        // set size of panel on resize
+        $(window).on('resize', function() {
+            $detailsContent.height( calcHeightOfPanel() );
+        });
 
 		// display bbt btn when user has scrolled x
 		$( window ).scroll(function() {
