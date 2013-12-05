@@ -80,7 +80,8 @@
 	}
 
     function calcHeightOfPanel() {
-        var height = $(window).height() - 235 - 16;
+        var titleH = $("#details > h1").height() + 45;
+        var height = $(window).height() - titleH - 16;
         return height;
     }
 
