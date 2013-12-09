@@ -1,44 +1,101 @@
+// Font stacks
+$serif-stack: Georgia, Times, "Times New Roman", serif;
+$sans-serif-stack: Helvetica, Arial, sans-serif;
+
+html {
+    font: normal 100%/1.65 $serif-stack;
+
+    @media only screen and (min-width: 480px) {
+        font-size: 112.5%;
+    }
+}
+
+body { font-family: $serif-stack; }
+
+h1, h2, h3, h4, h5, h6, .date {
+    font-family: $sans-serif-stack;
+    text-rendering: optimizeLegibility;
+    line-height: 1;
+    margin: 0;
+}
+
 #details {
+    color: $lightest_blue;
+    text-align: center;
+    font-family: $sans-serif-stack;
+
+    a {
+        color: $lightest_blue;
+        text-decoration: none;
+    }
+
     h1 {
         font-size: 4rem;
+        text-transform: uppercase;
     }
+
     ul {
         a {
             font-size: 1.167rem;
+            font-weight: bold;
+            text-transform: uppercase;
+
+            &:hover {
+                background: $lightest_blue;
+                color: $deep_blue;
+            }
         }
     }
 }
 
 #content {
-    .date {
+    .date { 
         font-size: 0.889rem;
+        color: $deep_blue;
     }
-    h2 {
+
+    h2 { 
         font-size: 1.778rem;
+        text-transform: uppercase;
     }
+
+    article .tags p {
+        font-weight: bold;
+
+        a { font-weight: normal; }
+    }
+
+    section h2 {
+        color: $deep_blue;
+        text-align: center;
+    }
+
+    header {
+        text-align: center;
+
+        h2 a {
+            color: $off_black;
+            text-decoration: none;
+        }
+    }
+
     .loadmore {
         font-size: 1.167rem;
+        text-align: center;
+        text-decoration: none;
     }
 }
 
 #backtotop {
     font-size: 1.778rem;
 
-    &:after {
-        font-size: 0.667rem;
-    }
+    &:after { font-size: 0.667rem; }
 }
 
 #content .post-content {
     div {
-        h1 {
-			font-size: 1.333rem;
-		}
-		h2 {
-		    font-size: 1.167rem;
-		}
+        h1 { font-size: 1.333rem; }
+        h2 { font-size: 1.167rem; }
     }
-    h2 {
-		font-size: 1.5rem;
-	}
+    h2 { font-size: 1.5rem; }
 }
