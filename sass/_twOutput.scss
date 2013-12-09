@@ -1,0 +1,12 @@
+/* Rules to make tw output look respectable */
+#content .post-content {
+    word-wrap: break-word;
+
+    div {
+        img { max-width: 100%; }
+        h1, h2 { margin: 1em 0 0.6em; }
+        h2 { text-transform: none; }
+        br { display: none; }
+        ul { margin: 0; }
+    }
+}
